@@ -4,16 +4,16 @@ import './style.css';
 import { useState } from 'react';
 
 export const Question = ({text}) => {
-  const [answered, setAnswered] = useState(false)
+  const [answer, setAnswer] = useState("symbolQuestion")
 
-  const handleSelect = () => {
-    setAnswered(!answered)
+  const handleSelect = (iconType) => {
+    setAnswer(iconType)
   }
 
   return (
     <div className="question">
       <QuestionBody 
-        iconType={answered ? "symbolTick" : "symbolQuestion"} 
+        iconType={answer} 
         text={text}
       />
       <div className="question__options">
